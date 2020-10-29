@@ -1,5 +1,3 @@
-const { default: ProjectSummary } = require("./ProjectSummary");
-
 import ProjectSummary from './ProjectSummary'
 
 function ProjectList() {

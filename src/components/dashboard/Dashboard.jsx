@@ -3,9 +3,6 @@ import Notifications from './Notifications'
 import ProjectList from '../projects/ProjectList'
 
 class Dashboard extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (
