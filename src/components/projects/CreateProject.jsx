@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux'
+import { createProject } from '../../store/actions/projectActions'
 class CreateProject extends React.Component {
     constructor(props) {
         super(props)
@@ -16,7 +17,7 @@ class CreateProject extends React.Component {
 
     onSubmit(e) {
         e.preventDefault()
-        console.log(this.state);
+        this.props.createProject(this.state)
     }
     render() {
         return(
@@ -29,7 +30,7 @@ class CreateProject extends React.Component {
                     </div>
                     <div className="input-field">
                         <label htmlFor="content">Project Content</label>
-                        <textarea type="text" name="content" id="content" onChange={this.onChange} value={this.state.content}></textarea>
+                        <textarea className="materialize-textarea" type="text" name="content" id="content" onChange={this.onChange} value={this.state.content}></textarea>
                     </div>
                     <div className="input-field">
                         <button type="submit" className="btn pink lighten-1 z-depth-0">Create Project</button>
@@ -40,4 +41,10 @@ class CreateProject extends React.Component {
     }
 }
 
-export default CreateProject
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createProject: (project) => dispatch(createProject(project))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CreateProject)
