@@ -4,13 +4,10 @@ function SignedOutLinks() {
     return (
         <ul className="right">
             <li>
-                <NavLink to="/">Sign Up</NavLink>
+                <NavLink to="/signup">Sign Up</NavLink>
             </li>
             <li>
-                <NavLink to="/">Login</NavLink>
-            </li>
-            <li>
-                <NavLink to="/" className="btn btn-floating pink ligthen-1">AA</NavLink>
+                <NavLink to="/signin">Login</NavLink>
             </li>
         </ul>
     )
